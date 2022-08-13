@@ -1,0 +1,2 @@
+const FN = returnFunction()
+FN()
