@@ -1,2 +1,0 @@
-const FN = returnFunction()
-FN()
