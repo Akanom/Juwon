@@ -8,7 +8,7 @@ export const fetchComments = createAsyncThunk(
   async () => {
     const response = await fetch(baseUrl + "comments");
     if (!response.ok) {
-      return Promise.reject("Unable to fetch, status" + response.status);
+      return Promise.reject("Unable to fetch, status:" + response.status);
     }
     const data = await response.json();
     return data;
@@ -16,7 +16,7 @@ export const fetchComments = createAsyncThunk(
 );
 
 export const postComments = createAsyncThunk(
-  "comments/postComment",
+  "comments/postComments",
   async (comment, { dispatch }) => {
     const response = await fetch(baseUrl + "comments", {
       method: "POST",
@@ -40,7 +40,7 @@ const initialState = {
 const commentsSlice = createSlice({
   name: "comments",
   initialState,
-  reducer: {
+  reducers: {
     addComment: (state, action) => {
       console.log("addComment action.payload:", action.payload);
       console.log("addComment state.commentsArray", state.commentsArray);
@@ -61,11 +61,12 @@ const commentsSlice = createSlice({
       state.commentsArray = mapImageURL(action.payload);
     },
     [fetchComments.rejected]: (state, action) => {
-      (state.isLoading = false)(
-        (state.errMsg = action.error ? action.error.message : "Fetch failed")
-      );
+      state.isLoading = false;
+      state.errMsg = action.error ? action.error.message : "Fetch failed";
     },
     [postComments.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.errMsg = action.error ? action.error.message : "Fetch failed";
       alert(
         "Your comments cannot be posted\nError: " +
           (action.error ? action.error.message : "Fetched failed")
@@ -74,7 +75,7 @@ const commentsSlice = createSlice({
   },
 });
 
-export const commentsReducer = commentsSlice.reducer;
+export  const commentsReducer = commentsSlice.reducer;
 
 export const { addComment } = commentsSlice.actions;
 
