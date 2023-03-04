@@ -18,21 +18,3 @@ export default CampsitesDirectoryPage
 
 
 
-// const CampsitesDirectoryPage = () => {
-//     const selectedCampsite = selectRandomCampsite();
-
-//     return (
-//         <Container>
-//             <Row>
-//                 <Col sm='5' md='7'>
-//                     <CampsitesList />
-//                 </Col>
-//                 <Col sm='7' md='5'>
-//                     <CampsiteDetail campsite={selectedCampsite} />
-//                 </Col>
-//             </Row>
-//         </Container>
-//     );
-// };
-
-// export default CampsitesDirectoryPage;
