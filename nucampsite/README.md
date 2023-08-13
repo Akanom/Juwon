@@ -1,5 +1,4 @@
-## Project Name
-### NuCampsite
+## NuCampsite
 
 **1. Introduction**
 
