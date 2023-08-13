@@ -1,6 +1,6 @@
 ## NuCampsite
 
-**1. Introduction**
+### **1. Introduction** 
 
 1. This is an application that can be used to book a campsite. It uses React, Redux and Redux-Toolkits template.
 
@@ -12,7 +12,7 @@ open the json-server file with gitbash (this can also be opened in your prefered
 
 ***json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000***
 
-**2. Availiable Script**
+### **2. Availiable Script**
 
 In the directory
 1. ***npm install create-react-app*** was used to create the web-application. 
@@ -21,7 +21,7 @@ In the directory
 
 Note, to clone this repository, you will need node and npm installed globally on your machine.
 
-**3. Avialiable Pages**
+### **3. Avialiable Pages**
 
 1. Home Page
 2. Campsite Detail Page
